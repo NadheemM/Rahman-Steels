@@ -30,7 +30,7 @@
   border: none;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #7f8c8d;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 10px 15px;
   transition: all 0.3s ease;
@@ -99,6 +99,10 @@
 .admin-table th {
   background-color: rgba(0,0,0,0.05);
   font-weight: 600;
+}
+
+[data-theme='dark'] .admin-table th {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .admin-prod-img {
