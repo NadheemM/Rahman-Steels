@@ -28,7 +28,7 @@ const Pricing = () => {
   return (
     <div className="pricing-page">
       <div className="container" style={{ paddingTop: '2rem' }}>
-        <h2 className="pricing-sub-title" style={{ marginTop: 0 }}>Agni TMT bars price</h2>
+        <h2 className="pricing-sub-title" style={{ marginTop: 0 }}>TMT bars price</h2>
         
         <p className="pricing-summary-text">
           Here is a summary of our TMT steel price concerning bar tolerance and nominal weight.
@@ -39,10 +39,7 @@ const Pricing = () => {
           (40, 45, 50, 55, 60, up to 65 feet) available according to your requirements.
         </p>
 
-        {/* Decorative Steel Rod Image similar to reference */}
-        <div className="steel-rod-divider">
-          <img src="/images/tmt-bars.png" alt="Steel Rod" className="rod-graphic" onError={(e) => { e.target.style.display = 'none' }} />
-        </div>
+
 
         <div className="pricing-table-container">
           <table className="pricing-table">
