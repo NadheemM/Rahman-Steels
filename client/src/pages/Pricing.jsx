@@ -28,19 +28,7 @@ const Pricing = () => {
   return (
     <div className="pricing-page">
       <div className="container" style={{ paddingTop: '2rem' }}>
-        <h1 className="pricing-main-title">AGNI TMT Steel Price</h1>
-        
-        <div className="pricing-intro-text">
-          <p>
-            From inaugurating our first steel plant in 1989 in Ingur, Perundurai, Tamil Nadu, to becoming a global leader in
-            steel manufacturing, Agni Steels has steered a long way in trust and workmanship. Our automated manufacturing
-            unit assures safe and sustainable high quality structural steel with a fair steel rod price. Upgrading our facility to
-            meet increasing demand, we continue to produce structural steel with innovation, excellence, and dedication. In
-            this page, let us learn about agni TMT steel price today and the factors affecting the price of our bars.
-          </p>
-        </div>
-
-        <h2 className="pricing-sub-title">Agni TMT bars price</h2>
+        <h2 className="pricing-sub-title" style={{ marginTop: 0 }}>Agni TMT bars price</h2>
         
         <p className="pricing-summary-text">
           Here is a summary of our TMT steel price concerning bar tolerance and nominal weight.
