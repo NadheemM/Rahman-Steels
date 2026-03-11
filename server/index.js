@@ -12,6 +12,9 @@ connectDB();
 
 const app = express();
 
+// Initialize chron jobs
+require('./jobs/updatePrices');
+
 // Middleware
 app.use(express.json());
 app.use(cors());

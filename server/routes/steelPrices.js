@@ -3,12 +3,15 @@ const {
     getSteelPrices,
     addSteelPriceTier,
     updateSteelPriceTier,
-    deleteSteelPriceTier
+    deleteSteelPriceTier,
+    syncWithMetalsApi
 } = require('../controllers/steelPriceController');
 
 const router = express.Router();
 
 const { protect, admin } = require('../middleware/auth');
+
+router.post('/sync', protect, admin, syncWithMetalsApi);
 
 router.route('/')
     .get(getSteelPrices)
