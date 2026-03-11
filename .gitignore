@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+.npm
+.eslintcache
+
+# environment variables
+.env
+.env.*
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# build / compiled output
+dist/
+build/
+.next/
+out/
+build-output/
+
+# OS files
+.DS_Store
+Thumbs.db

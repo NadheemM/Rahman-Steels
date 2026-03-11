@@ -1,0 +1,131 @@
+.pricing-page {
+  padding-bottom: 50px;
+  background-color: var(--bg-color);
+}
+
+.pricing-main-title {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.pricing-intro-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.pricing-sub-title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.pricing-summary-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.pricing-details-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.steel-rod-divider {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.rod-graphic {
+  max-width: 100%;
+  height: 40px;
+  object-fit: cover;
+}
+
+.pricing-table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  min-width: 600px;
+}
+
+.pricing-table th, .pricing-table td {
+  padding: 15px;
+  text-align: center;
+}
+
+.pricing-table th {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.th-sub {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+.pricing-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+/* Alternating rows logic based on standard clean table design */
+.pricing-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.pricing-table td {
+  color: #444;
+  font-size: 1.05rem;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .pricing-table {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme='dark'] .pricing-table th {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme='dark'] .th-sub {
+  color: #aaa;
+}
+
+[data-theme='dark'] .pricing-table td {
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme='dark'] .pricing-table tbody tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.2);
+}
+
+[data-theme='dark'] .pricing-intro-text p,
+[data-theme='dark'] .pricing-summary-text,
+[data-theme='dark'] .pricing-details-text {
+  color: #ccc;
+}
