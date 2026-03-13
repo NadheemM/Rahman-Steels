@@ -7,6 +7,7 @@ import Pricing from './pages/Pricing';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import About from './pages/About';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ManageProduct from './pages/admin/ManageProduct';
@@ -68,6 +69,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/pricing" element={<Pricing />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
