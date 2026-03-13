@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
     FaFacebook,
@@ -14,6 +14,27 @@ import {
 import './Footer.css';
 
 const Footer = () => {
+    const [isShopOpen, setIsShopOpen] = useState(false);
+
+    useEffect(() => {
+        const checkOpenStatus = () => {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sunday, 1 = Monday...
+            const hour = now.getHours();
+            
+            // Open Mon - Sat (1-6), 9 AM (9) to 8 PM (19:59)
+            if (day >= 1 && day <= 6 && hour >= 9 && hour < 20) {
+                setIsShopOpen(true);
+            } else {
+                setIsShopOpen(false);
+            }
+        };
+
+        checkOpenStatus();
+        const interval = setInterval(checkOpenStatus, 60000); // Check every minute
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <footer className="footer-section">
             <div className="container footer-grid">
@@ -71,8 +92,8 @@ const Footer = () => {
                                 <span>Closed</span>
                             </div>
                         </div>
-                        <div className="status-badge open">
-                            <span className="dot"></span> Currently Open
+                        <div className={`status-badge ${isShopOpen ? 'open' : 'closed'}`}>
+                            <span className={`dot ${isShopOpen ? 'open' : 'closed'}`}></span> {isShopOpen ? 'Currently Open' : 'Currently Closed'}
                         </div>
                     </div>
                 </div>
