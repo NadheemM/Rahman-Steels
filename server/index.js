@@ -1,12 +1,14 @@
 const express = require('express');
 const dotenv = require('dotenv');
+dotenv.config();
+
 const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 const steelPriceRoutes = require('./routes/steelPrices');
-
-dotenv.config();
+const paymentRoutes = require('./routes/payment');
+const adminRoutes = require('./routes/admin');
 
 connectDB();
 
@@ -28,6 +30,8 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/steel-prices', steelPriceRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {

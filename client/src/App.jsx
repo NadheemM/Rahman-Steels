@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Pricing from './pages/Pricing';
 import Cart from './pages/Cart';
+import Payment from './pages/Payment';
+import PaymentSuccess from './pages/PaymentSuccess';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import About from './pages/About';
@@ -71,6 +73,8 @@ function App() {
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+                <Route path="/payment-success" element={<ProtectedRoute><PaymentSuccess /></ProtectedRoute>} />
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
                 

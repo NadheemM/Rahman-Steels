@@ -1,11 +1,12 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaTrash, FaMinus, FaPlus, FaArrowLeft } from 'react-icons/fa';
 import './Cart.css';
 
 const Cart = () => {
     const { cart, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
+    const navigate = useNavigate();
     const gstRate = 0.18;
     const gstAmount = cartTotal * gstRate;
     const grandTotal = cartTotal + gstAmount;
@@ -95,7 +96,7 @@ const Cart = () => {
                         <span>Total</span>
                         <span>₹{grandTotal.toFixed(2)}</span>
                     </div>
-                    <button className="btn btn-primary checkout-btn" onClick={() => alert('Checkout functionality processed!')}>
+                    <button className="btn btn-primary checkout-btn" onClick={() => navigate('/payment')}>
                         Proceed to Checkout
                     </button>
                 </div>
