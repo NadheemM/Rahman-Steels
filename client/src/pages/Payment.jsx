@@ -159,7 +159,7 @@ const Payment = () => {
         try {
             // Check if it's COD
             if (paymentMethod === 'cod') {
-                const codRes = await axios.post('http://localhost:5000/api/payments/create-cod-order', {
+                const codRes = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/payments/create-cod-order`, {
                     amount: grandTotal,
                     cartItems: cart,
                     shippingAddress: {
@@ -190,7 +190,7 @@ const Payment = () => {
 
             // Otherwise, it's Razorpay online payment
             // 1. Create order on backend
-            const orderRes = await axios.post('http://localhost:5000/api/payments/create-order', {
+            const orderRes = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/payments/create-order`, {
                 amount: grandTotal,
                 cartItems: cart,
                 shippingAddress: {
@@ -237,7 +237,7 @@ const Payment = () => {
                 handler: async function (response) {
                     // 4. Verify Payment on Backend
                     try {
-                        const verifyRes = await axios.post('http://localhost:5000/api/payments/verify-payment', {
+                        const verifyRes = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/payments/verify-payment`, {
                             razorpay_order_id: response.razorpay_order_id,
                             razorpay_payment_id: response.razorpay_payment_id,
                             razorpay_signature: response.razorpay_signature

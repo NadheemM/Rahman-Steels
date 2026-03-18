@@ -10,7 +10,7 @@ const Pricing = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/steel-prices');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices`);
         setSteelPrices(res.data.data);
         setLoading(false);
       } catch (err) {

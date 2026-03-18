@@ -30,10 +30,10 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const [statsRes, productsRes, pricesRes, ordersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/admin/dashboard', { headers: { Authorization: `Bearer ${token}` } }),
-        axios.get('http://localhost:5000/api/products'),
-        axios.get('http://localhost:5000/api/steel-prices'),
-        axios.get('http://localhost:5000/api/payments/admin/all', { headers: { Authorization: `Bearer ${token}` } })
+        axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/dashboard`, { headers: { Authorization: `Bearer ${token}` } }),
+        axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products`),
+        axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices`),
+        axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/payments/admin/all`, { headers: { Authorization: `Bearer ${token}` } })
       ]);
       setStats(statsRes.data.data);
       setProducts(productsRes.data.data);
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
   const deleteProduct = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/products/${id}`, {
+        await axios.delete(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
   const deletePriceTier = async (id) => {
     if (window.confirm('Are you sure you want to delete this price tier?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/steel-prices/${id}`, {
+        await axios.delete(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
 
   const updateOrderStatus = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/payments/admin/${id}/status`, { orderStatus: newStatus }, {
+      await axios.put(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/payments/admin/${id}/status`, { orderStatus: newStatus }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Update local state without re-fetching all data
