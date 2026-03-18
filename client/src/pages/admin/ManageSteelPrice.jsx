@@ -38,7 +38,7 @@ const ManageSteelPrice = () => {
     try {
       setLoading(true);
       // Wait for the full list to find our specific tier (simplest approach for now)
-      const res = await axios.get('http://localhost:5000/api/steel-prices');
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices`);
       const tier = res.data.data.find(p => p._id === id);
       
       if (tier) {
@@ -81,9 +81,9 @@ const ManageSteelPrice = () => {
 
     try {
       if (isEditMode) {
-        await axios.put(`http://localhost:5000/api/steel-prices/${id}`, formData, config);
+        await axios.put(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices/${id}`, formData, config);
       } else {
-        await axios.post('http://localhost:5000/api/steel-prices', formData, config);
+        await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices`, formData, config);
       }
       navigate('/admin/dashboard');
     } catch (err) {

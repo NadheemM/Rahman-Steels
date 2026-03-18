@@ -67,3 +67,16 @@ exports.deleteSteelPriceTier = async (req, res) => {
         res.status(500).json({ success: false, message: error.message });
     }
 };
+
+// @desc    Trigger manual sync with Metals API
+// @route   POST /api/steel-prices/sync
+// @access  Private/Admin
+exports.syncWithMetalsApi = async (req, res) => {
+    try {
+        const updateSteelPrices = require('../jobs/updatePrices');
+        await updateSteelPrices();
+        res.json({ success: true, message: 'Pricing sync initiated' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};

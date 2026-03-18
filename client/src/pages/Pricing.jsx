@@ -10,7 +10,7 @@ const Pricing = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/steel-prices');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/steel-prices`);
         setSteelPrices(res.data.data);
         setLoading(false);
       } catch (err) {
@@ -28,19 +28,7 @@ const Pricing = () => {
   return (
     <div className="pricing-page">
       <div className="container" style={{ paddingTop: '2rem' }}>
-        <h1 className="pricing-main-title">AGNI TMT Steel Price</h1>
-        
-        <div className="pricing-intro-text">
-          <p>
-            From inaugurating our first steel plant in 1989 in Ingur, Perundurai, Tamil Nadu, to becoming a global leader in
-            steel manufacturing, Agni Steels has steered a long way in trust and workmanship. Our automated manufacturing
-            unit assures safe and sustainable high quality structural steel with a fair steel rod price. Upgrading our facility to
-            meet increasing demand, we continue to produce structural steel with innovation, excellence, and dedication. In
-            this page, let us learn about agni TMT steel price today and the factors affecting the price of our bars.
-          </p>
-        </div>
-
-        <h2 className="pricing-sub-title">Agni TMT bars price</h2>
+        <h2 className="pricing-sub-title" style={{ marginTop: 0 }}>TMT bars price</h2>
         
         <p className="pricing-summary-text">
           Here is a summary of our TMT steel price concerning bar tolerance and nominal weight.
@@ -51,10 +39,7 @@ const Pricing = () => {
           (40, 45, 50, 55, 60, up to 65 feet) available according to your requirements.
         </p>
 
-        {/* Decorative Steel Rod Image similar to reference */}
-        <div className="steel-rod-divider">
-          <img src="/images/tmt-bars.png" alt="Steel Rod" className="rod-graphic" onError={(e) => { e.target.style.display = 'none' }} />
-        </div>
+
 
         <div className="pricing-table-container">
           <table className="pricing-table">

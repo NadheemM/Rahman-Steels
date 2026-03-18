@@ -178,16 +178,31 @@
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
+}
+
+.status-badge.open {
     color: #15803d;
     background-color: #dcfce7;
+}
+
+.status-badge.closed {
+    color: #b91c1c;
+    background-color: #fee2e2;
 }
 
 .dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
+}
+
+.dot.open {
     background-color: #22c55e;
     animation: pulse 2s infinite;
+}
+
+.dot.closed {
+    background-color: #ef4444;
 }
 
 .map-placeholder {

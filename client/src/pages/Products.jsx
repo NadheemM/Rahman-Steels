@@ -32,7 +32,7 @@ const Products = () => {
     const fetchProducts = async () => {
         try {
             setLoading(true);
-            const res = await axios.get('http://localhost:5000/api/products');
+            const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products`);
             setProducts(res.data.data);
             setLoading(false);
         } catch (error) {

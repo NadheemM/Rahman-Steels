@@ -1,0 +1,301 @@
+.payment-success-container {
+    min-height: calc(100vh - 200px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.success-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-icon {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.success-icon svg {
+    width: 80px;
+    height: 80px;
+    color: #10b981;
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.success-content h1 {
+    text-align: center;
+    color: #1f2937;
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.message {
+    text-align: center;
+    color: #6b7280;
+    margin: 0 0 30px 0;
+    font-size: 16px;
+}
+
+.order-details {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #e5e7eb;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row .label {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.detail-row .value {
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.font-mono {
+    font-family: 'Courier New', monospace;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+}
+
+.amount {
+    color: #10b981;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.status-paid {
+    color: #10b981;
+    background: #d1fae5;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.success-message {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.success-message p {
+    margin: 0 0 10px 0;
+    color: #065f46;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.success-message p:last-child {
+    margin-bottom: 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+    transform: translateY(-2px);
+}
+
+.invoice-section {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    page-break-inside: avoid;
+}
+
+.invoice-section h3 {
+    color: #1f2937;
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.receipt-details {
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.receipt-details p {
+    margin: 8px 0;
+}
+
+.receipt-details p strong {
+    color: #1f2937;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.receipt-details code {
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.text-sm {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Print styles */
+@media print {
+    .payment-success-container {
+        background: #ffffff;
+        padding: 0;
+    }
+
+    .success-content {
+        box-shadow: none;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .action-buttons {
+        display: none;
+    }
+
+    .success-icon {
+        display: none;
+    }
+
+    .success-message {
+        display: none;
+    }
+
+    .invoice-section {
+        border: none;
+        background: transparent;
+    }
+
+    .order-details {
+        border: none;
+        background: transparent;
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .success-content {
+        padding: 30px 20px;
+    }
+
+    .success-content h1 {
+        font-size: 24px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .success-icon svg {
+        width: 60px;
+        height: 60px;
+    }
+}

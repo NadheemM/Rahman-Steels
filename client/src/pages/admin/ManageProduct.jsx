@@ -37,7 +37,7 @@ const ManageProduct = () => {
   const fetchProduct = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products/${id}`);
       setFormData({
         name: res.data.data.name,
         description: res.data.data.description,
@@ -75,9 +75,9 @@ const ManageProduct = () => {
 
     try {
       if (isEditMode) {
-        await axios.put(`http://localhost:5000/api/products/${id}`, formData, config);
+        await axios.put(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products/${id}`, formData, config);
       } else {
-        await axios.post('http://localhost:5000/api/products', formData, config);
+        await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products`, formData, config);
       }
       navigate('/admin/dashboard');
     } catch (err) {
